@@ -1,1 +1,11 @@
-Cognitive Services
+# Cognitive Services Workshop
+
+This folder contains hands-on labs introducing some of the tools available in Azure and in [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) for building intelligent bots and applications backed by AI and machine learning. 
+
+Lab | Scenario | Technology/Language
+--- | -------- | -------------------
+[Face](./Lab1/Cognitive%20Services%20Labs-Lab%2001-1.md) | Use the Face API to detect people and understand emotions. | [Face](https://azure.microsoft.com/en-us/services/cognitive-services/face/)<br>JavaScript, Python
+[Custom Vision Service](https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Custom%20Vision%20Service/Custom%20Vision%20Service.md) | Train a neural network to recognize famous paintings. Then build a Node.js app that uses the network to identify the artists of paintings that you upload. | [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)<br>JavaScript 
+[Video Indexer](https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Video%20Indexer/Video%20Indexer.md) | Index a collection of videos and extract insights such as people in the videos, topics discussed in the videos, and video transcripts. Then deploy a Node.js app that makes video content searchable. | [Video Indexer](https://azure.microsoft.com/services/cognitive-services/video-indexer/)<br>JavaScript 
+[Azure Bot Service](https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Azure%20Bot%20Service/Azure%20Bot%20Service.md) | Build an intelligent chat bot using JavaScript and Node.js, deploy it to Azure, and converse with it using Skype. | [Azure Bot Service](https://azure.microsoft.com/services/bot-service/)<br>[Microsoft QnA Maker](https://qnamaker.ai/)<br>JavaScript 
+[LUIS](https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/LUIS/LUIS.md) | Build a language-understanding model with the Microsoft Language Understanding Intelligent Service (LUIS). Then deploy a bot that uses the model to respond to commands such as "Get the latest news about Microsoft." | [Microsoft LUIS](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/)<br>JavaScript 
