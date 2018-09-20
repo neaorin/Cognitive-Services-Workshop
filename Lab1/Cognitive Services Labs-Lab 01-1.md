@@ -213,28 +213,30 @@ Create a file named “index.html”.
 
 Add the following code to this index.html:
 
-\<html\>
 
-\<head\>
+```html
+<html>
 
-\<title\>Emotions API Demo\</title\>
+<head>
 
-\<script
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"\>\</script\>
+<title>Emotions API Demo</title>
 
-\<script src="script.js"\>\</script\>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-\</head\>
+<script src="script.js"></script>
 
-\<body\>
+</head>
 
-\<h1\>Microsoft Cognitive Services\</h1\>
+<body>
 
-\<h2\>Emotions API Lab\</h2\>
+<h1>Microsoft Cognitive Services</h1>
 
-\<div\>Image URL:\</div\>
+<h2>Emotions API Lab</h2>
 
-\<input
+<div>Image URL:</div>
+
+<input
 
 type="text"
 
@@ -242,45 +244,47 @@ id="imageUrlTextbox"
 
 class="urlInput"
 
-value="https://photos.smugmug.com/Tech-Community/GANGConf-2017/i-H2ZNBJT/0/c28d08df/L/IMG_7743-L.jpg"\>
+value="https://photos.smugmug.com/Tech-Community/GANGConf-2017/i-H2ZNBJT/0/c28d08df/L/IMG_7743-L.jpg">
 
-\<button id="analyzeImageButton"\>Analyze Image \</button\>
+<button id="analyzeImageButton">Analyze Image </button>
 
-\<div id="ResultsDiv"\>\</div\>
+<div id="ResultsDiv"></div>
 
-\<div id="AngerDiv"\>\</div\>
+<div id="AngerDiv"></div>
 
-\<div id="ContemptDiv"\>\</div\>
+<div id="ContemptDiv"></div>
 
-\<div id="DisgustDiv"\>\</div\>
+<div id="DisgustDiv"></div>
 
-\<div id="FearDiv"\>\</div\>
+<div id="FearDiv"></div>
 
-\<div id="HappinessDiv"\>\</div\>
+<div id="HappinessDiv"></div>
 
-\<div id="NeutralDiv"\>\</div\>
+<div id="NeutralDiv"></div>
 
-\<div id="SadnessDiv"\>\</div\>
+<div id="SadnessDiv"></div>
 
-\<div id="SurpriseDiv"\>\</div\>
+<div id="SurpriseDiv"></div>
 
-\<div\>
+<div>
 
-\<img src="" id="imageToAnalyze"\>
+<img src="" id="imageToAnalyze">
 
-\</div\>
+</div>
 
-\</body\>
+</body>
 
-\</html\>
+</html>
+```
 
 Create a file named “script.js”
 
 Add the following code to script.js:
 
-\$(function () {
+```js
+$(function () {
 
-\$("\#analyzeImageButton").click(function () {
+$("#analyzeImageButton").click(function () {
 
 getImageInfo();
 
@@ -288,20 +292,20 @@ getImageInfo();
 
 var getImageInfo = function () {
 
-var subscriptionKey = "dc6d7936f86b4577bbb9750c91233f74";
+var subscriptionKey = "EmotionAPIKey";
 
-var imageUrl = \$("\#imageUrlTextbox").val();
+var imageUrl = $("#imageUrlTextbox").val();
 
 var webSvcUrl =
 "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize";
 
-var resultsDiv = \$("\#ResultsDiv");
+var resultsDiv = $("#ResultsDiv");
 
 if (imageUrl) {
 
 var body = '{ "url": "' + imageUrl + '" }';
 
-\$.ajax({
+$.ajax({
 
 type: "POST",
 
@@ -349,27 +353,27 @@ var sadnessText = "Sadness Score: " + sadnessScore.toFixed(2);
 
 var surpriseText = "Surprise Score: " + surpriseScore.toFixed(2);
 
-\$("\#AngerDiv").text(angerText);
+$("#AngerDiv").text(angerText);
 
-\$("\#ContemptDiv").text(contemptText);
+$("#ContemptDiv").text(contemptText);
 
-\$("\#DisgustDiv").text(disgustText);
+$("#DisgustDiv").text(disgustText);
 
-\$("\#FearDiv").text(fearText);
+$("#FearDiv").text(fearText);
 
-\$("\#HappinessDiv").text(happinessText);
+$("#HappinessDiv").text(happinessText);
 
-\$("\#NeutralDiv").text(NeutralText);
+$("#NeutralDiv").text(NeutralText);
 
-\$("\#SadnessDiv").text(sadnessText);
+$("#SadnessDiv").text(sadnessText);
 
-\$("\#SurpriseDiv").text(surpriseText);
+$("#SurpriseDiv").text(surpriseText);
 
-\$("\#ResultsDiv").text("Success!");
+$("#ResultsDiv").text("Success!");
 
 }).fail(function (err) {
 
-\$("\#ResultsDiv").text("ERROR!" + err.responseText);
+$("#ResultsDiv").text("ERROR!" + err.responseText);
 
 });
 
@@ -378,6 +382,9 @@ var surpriseText = "Surprise Score: " + surpriseScore.toFixed(2);
 };
 
 });
+```
+
+Replace *EmotionAPIKey* with your Emotion API key created in Exercise 1.
 
 Save both files. Open index.html in a web browser.
 
@@ -443,7 +450,6 @@ library.
 
 The newly-created notebook will now be listed in the library.
 
-nb
 
 ![](media/f64e240ca59f14fb2a797d2d86c5278e.png)
 
@@ -456,28 +462,29 @@ be empty except for an empty code box.
   
 Paste the following code into the code box:
 
+```python
 import http.client, urllib.request, urllib.parse, urllib.error, base64  
 headers = {  
-\# Request headers  
-'Content-Type': 'application/json',  
-'Ocp-Apim-Subscription-Key': '*EmotionAPIKey*',  
+    # Request headers  
+    'Content-Type': 'application/json',  
+    'Ocp-Apim-Subscription-Key': 'EmotionAPIKey',  
 }  
   
-params = urllib.parse.urlencode({  
-})  
+params = urllib.parse.urlencode({})  
   
 try:  
-conn = http.client.HTTPSConnection('westus.api.cognitive.microsoft.com')  
-conn.request("POST", "/emotion/v1.0/recognize?%s" % params, "{'url':
-'https://photos.smugmug.com/Tech-Community/GANGConf-2017/i-H2ZNBJT/0/c28d08df/L/IMG_7743-L.jpg'}",
-headers)  
-response = conn.getresponse()  
-data = response.read()  
-print(data)  
-conn.close()  
+    conn = http.client.HTTPSConnection('westus.api.cognitive.microsoft.com')  
+    conn.request("POST", "/emotion/v1.0/recognize?%s" % params, "{'url':
+    'https://photos.smugmug.com/Tech-Community/GANGConf-2017/i-H2ZNBJT/0/c28d08df/L/IMG_7743-L.jpg'}",
+    headers)  
+    response = conn.getresponse()  
+    data = response.read()  
+    print(data)  
+    conn.close()  
 except Exception as e:  
 print("[Errno {0}] {1}".format(e.errno, e.strerror))  
-  
+```
+
 Replace *EmotionAPIKey* with your Emotion API key created in Exercise 1.
 
 Click the [Run] button on the toolbar.

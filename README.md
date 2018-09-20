@@ -2,6 +2,23 @@
 
 This folder contains hands-on labs introducing some of the tools available in Azure and in [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) for building intelligent bots and applications backed by AI and machine learning. 
 
+> NOTE: most of the lab content is hosted in remote Git repositories. Be sure to bookmark or keep this page open.
+
+# Prerequisites
+
+In order to complete these labs, you will need the following:
+
+* An Azure subscription. If you do not yet have one,
+navigate to <https://azure.microsoft.com>; click the [Start Free] button and
+follow the instructions to sign up for a free Azure trial.
+
+* A text editor. We recommend [Visual Studio Code](https://code.visualstudio.com/), because it
+is free, lightweight, and will run on Windows , MacOS, or Linux. You can
+download Visual Studio Code at <https://code.visualstudio.com/>. But feel free
+to use any editor with which you are comfortable.
+
+* The [Node.js](https://nodejs.org/) JavaScript runtime. Go to the [download page](https://nodejs.org/en/download/) to get the Node.js version for your operating system.
+
 Lab | Scenario | Technology/Language
 --- | -------- | -------------------
 [Face](./Lab1/Cognitive%20Services%20Labs-Lab%2001-1.md) | Use the Face API to detect people and understand emotions. | [Face](https://azure.microsoft.com/en-us/services/cognitive-services/face/)<br>JavaScript, Python
