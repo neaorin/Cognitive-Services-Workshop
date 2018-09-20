@@ -19,6 +19,12 @@ to use any editor with which you are comfortable.
 
 * The [Node.js](https://nodejs.org/) JavaScript runtime. Go to the [download page](https://nodejs.org/en/download/) to get the Node.js version for your operating system.
 
+# Initial Setup
+
+Before creating any other Azure services, it would be a good idea to [create a Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy-portal#create-resource-group) to store those services in. This will allow you to clean up easily after the lab, by simply deleting the Resource Group and all the services within.
+
+# Labs
+
 Lab | Scenario | Technology/Language
 --- | -------- | -------------------
 [Face](./Lab1/Cognitive%20Services%20Labs-Lab%2001-1.md) | Use the Face API to detect people and understand emotions. | [Face](https://azure.microsoft.com/en-us/services/cognitive-services/face/)<br>JavaScript, Python
